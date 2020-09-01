@@ -50,7 +50,7 @@ $ gulp
 
 ## GitHub Pages
 
-	- https://kornet98.github.io/TM_Homework_JS/
+	- [https://kornet98.github.io/TM_Homework_JS]
 
 
 
