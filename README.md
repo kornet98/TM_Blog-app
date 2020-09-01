@@ -49,7 +49,7 @@ $ gulp
 
 
 ## Github Pages 
-	-[link to project](https://kornet98.github.io/TM_Homework_JS/)
+	- https://kornet98.github.io/TM_Homework_JS
 
 
 
