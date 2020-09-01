@@ -48,9 +48,7 @@ $ gulp
 
 
 
-## GitHub Pages
-
-	- [https://kornet98.github.io/TM_Homework_JS]
+## [Github Pages] (https://kornet98.github.io/TM_Homework_JS/)
 
 
 
