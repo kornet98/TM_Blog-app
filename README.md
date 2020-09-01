@@ -14,8 +14,8 @@ The application downloads posts and comments to them(by clicking the "COMMENTS" 
 
 ### Step 1
 
-    - Clone this repo to your local machine 
-	 - or press "Download ZIP" button
+    - Clone this repo to your local machine using https://github.com/kornet98/TM_Blog-app.git
+	 - Or press "Download ZIP" button, 
 
 ### Step 2
 
@@ -49,6 +49,8 @@ $ gulp
 
 
 ## GitHub Pages
+
+	- https://kornet98.github.io/TM_Homework_JS/
 
 
 
