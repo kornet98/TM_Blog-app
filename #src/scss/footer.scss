@@ -1,0 +1,38 @@
+.footer {
+
+	padding: 30px 0;
+	border-top: 1px solid $silver;
+
+	// .footer__container
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	// .footer__btn
+
+	&__btn {
+		@extend %btn;
+		text-align: center;
+		width: 100px;
+
+		&:hover{
+			@extend %btn-hover;
+		}
+		&:active{
+			@extend %btn-active;
+		}
+		@media (max-width: 576px) {
+			width: 100px;
+		}
+	}
+
+	// .footer__author
+
+	&__author h4{
+		font-size: 18px;
+	}
+}
+

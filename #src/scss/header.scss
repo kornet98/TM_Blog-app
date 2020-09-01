@@ -1,0 +1,55 @@
+//-------header-------
+.header {
+	position: fixed;
+	width: 100%;
+	border-bottom: 1px solid $silver;
+	padding: 30px 0;
+	z-index: 2;
+	background: $dark;
+	@media (max-width: 576px) {
+		padding: 15px 0;
+	}
+	h1{
+		font-size: 50px;
+		@media (max-width: 576px) {
+			font-size: 34px;
+		}
+	}
+	// .header__container
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	// .header__logo
+
+	&__logo {
+		font-family: $text-font;
+		font-size: 20px;
+		letter-spacing: 5px;
+		text-transform: uppercase;
+		color:$yellow;
+		@media (max-width: 576px) {
+			font-size: 18;
+		}
+	}
+
+	// .header__link
+
+	&__link {
+		@extend %btn;
+		width: 200px;
+
+		&:hover{
+			@extend %btn-hover;
+		}
+		&:active{
+			@extend %btn-active;
+		}
+		@media (max-width: 576px) {
+			width: 100px;
+		}
+	}
+}

@@ -1,0 +1,145 @@
+// -------Modal window-------
+
+.modal {
+	position: fixed;
+	top: -50%;
+	left: 50%;
+	transform: perspective(600px) translate(-50%, -50%) rotateX(45deg);
+	background-color: $dark;
+	color: $silver;
+	width: 800px;
+	padding: 30px;
+	transition: all 0.8s ease 0s;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 10;
+	@media (max-width: 992px) {
+		width: 90vw;
+	}
+	&.open{
+		visibility: visible;
+		transform: perspective(600px) translate(-50%, -50%) rotateX(0deg);
+		top: 50%;
+		opacity: 1;
+	}
+
+// .modal__close
+
+	&__close {
+		font-family: $text-font;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 20px;
+		color: $silver;
+		cursor: pointer;
+	}
+
+	// .modal__title
+
+	&__title {
+		font-size: 40px;
+		margin-bottom: 30px;
+		@media (max-width: 576px) {
+			font-size: 32px;
+		}
+	}
+
+	// .modal__form
+
+}
+.form {
+	width: 100%;
+	// .form__title
+
+	&__input {
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 30px;
+		background-color: $grey;
+		border-radius: 8px;
+		color: $silver;
+		font-size: 16px;
+		font-family: $text-font;
+		&::placeholder {
+			color: #999;
+			}
+	}
+
+	// .form__form-textarea
+
+	&__form-textarea {
+		background-color: $grey;
+		resize: none;
+		width: 100%;
+		padding: 10px;
+		font-family: $text-font;
+		font-size: 16px;
+		font-weight: normal;
+		color: $silver;
+		border-radius: 10px;
+		overflow: auto;
+		margin-bottom: 20px;
+		&::-webkit-scrollbar {
+			width: 3px;
+			color: red;
+		  }
+		  &::-webkit-scrollbar-track {
+			background: transparent;
+		  }
+	  
+		  &::-webkit-scrollbar-thumb {
+			border-radius: 2px;
+			background-color: #9e9e9e;
+		  }
+		&::placeholder {
+			color: #999;
+			font-size: 16px;
+			font-family: $text-font;
+			}
+		&.active{
+			background-color: #fff;
+			height: 100%;
+		}
+	}
+
+	// .form__btn
+
+	&__btn {
+		width: 100%;
+		@extend %btn;
+		&:hover{
+			@extend %btn-hover;
+		}
+		&:active{
+			@extend %btn-active;
+		}
+	}
+}
+
+input:invalid, textarea:invalid {
+	box-shadow: 0 0 5px 1px red;
+}
+ 
+input:focus:invalid {
+	outline: none;
+}
+
+
+.overlay {
+	position:fixed;
+	background-color:rgba(0, 0, 0, 0.8); 
+	opacity:0;
+	width:100%; 
+	height:100%;
+	z-index:3;
+	top:0;
+	left:0;
+	transition: all 0.8s ease 0s;
+	cursor:pointer;
+	visibility: hidden;
+	&.active{
+		visibility: visible;
+		opacity: 1;
+	}
+}

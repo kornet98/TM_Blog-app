@@ -1,0 +1,168 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url('../fonts/#{$file_name}.woff') format('woff'),
+			 url('../fonts/#{$file_name}.woff2') format('woff2');
+		font-style: $style;
+		font-weight: $weight;
+	}
+}
+
+
+@import "fonts";
+@import "nullable";
+@import "variables";
+
+/*-------------------------------*/
+%logo{
+	font-family: $text-font;
+	font-size: 20px;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	color:$yellow;
+	@media (max-width: 576px) {
+		font-size: 18;
+	}
+}
+%btn {
+	padding: 10px 0;
+	border: 1px solid $yellow;
+	font-family: $text-font;
+	font-weight: 700;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: $grey;
+	background: $yellow;
+	cursor: pointer;
+	transition: all 0.5s ease;
+	border-radius: 8px;
+	@media (max-width: 576px) {
+		font-size: 16px;
+	}
+}
+%btn-hover{
+	-webkit-box-shadow: 0px 0px 25px 1px rgba(254,218,106,0.8);
+	-moz-box-shadow: 0px 0px 25px 1px rgba(254,218,106,0.8);
+	box-shadow: 0px 0px 25px 1px rgba(254,218,106,0.8);
+}
+%btn-active{
+	-webkit-box-shadow: 0px 0px 25px -5px rgba(254,218,106,0.8);
+	-moz-box-shadow: 0px 0px 25px -5px rgba(254,218,106,0.8);
+	box-shadow: 0px 0px 25px -5px rgba(254,218,106,0.8);
+}
+
+/*-------------------------------*/
+
+.container{
+	max-width: 1140px;
+	padding: 0 30px;
+	margin: 0 auto;
+	@media (max-width: 576px) {
+		padding: 0 20px;
+	}
+}
+
+.logo{
+	@extend %logo;
+}
+
+@import "header";
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	background: $dark;
+	color: $silver;
+	&.lock{
+		overflow: hidden;
+	}
+}
+
+.main{
+	padding-top: 100px;
+	min-height: 100%;
+   height: auto !important;
+	height: 100%;
+	
+	@media (max-width: 576px) {
+		padding-top: 45px;
+	}
+}
+.post-wrapper{
+	display: flex;
+	margin-top: 50px;
+}
+
+
+
+@import "modal";
+
+.posts{
+	align-items: center;
+	.post {
+		width: 100%;
+		border: 1px solid #242526;
+		border-radius: 20px;
+		align-items: start;
+		background: #393f4d;
+		
+		padding: 20px;
+		margin-bottom: 30px;
+		// .post__data
+	
+		&__data {
+			margin-bottom: 20px;
+		}
+	
+		// .post__title
+	
+		&__title {
+			font-size: 32px;
+			margin-bottom: 15px;
+			line-height: 1.2;
+			@media (max-width: 576px) {
+				font-size: 28px;
+			}
+		}
+	
+		// .post__date
+	
+		&__date {
+			color: #999;
+			margin-bottom: 20px;
+		}
+	
+		// .post__body
+	
+		&__body {
+			line-height: 1.4;
+			font-size: 16px;
+			@media (max-width: 576px) {
+				font-size: 14px;
+			}
+		}
+
+		// .post__btn
+
+		&__btn {
+			@extend %btn;
+			width: 200px;
+			margin-bottom: 15px;
+			&:hover{
+				@extend %btn-hover;
+			}
+			&:active{
+				@extend %btn-active;
+			}
+		}
+
+		&__comments{
+			@import "comments";
+		}
+	}
+}
+@import "footer";
