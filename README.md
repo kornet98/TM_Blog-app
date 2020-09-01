@@ -49,7 +49,8 @@ $ gulp
 
 
 ## Github Pages 
-	- https://kornet98.github.io/TM_Homework_JS
+	- **Link to GitHub Pages** 
+		- https://kornet98.github.io/TM_Homework_JS
 
 
 
